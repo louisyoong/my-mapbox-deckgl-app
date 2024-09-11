@@ -10,15 +10,22 @@ describe("Posts Page Tests with JSONPlaceholder API", () => {
   });
 
   it("should allow users to search for posts by title", () => {
-    // Search for "sunt"
-    cy.get('[data-testid="query-input"]').clear().type("sunt");
+    // Search for "sunt aut facere repellat provident occaecati excepturi optio reprehenderitunt"
+    cy.get('[data-testid="query-input"]')
+      .clear()
+      .type(
+        "sunt aut facere repellat provident occaecati excepturi optio reprehenderit"
+      );
 
     // Wait for the results to update
     cy.get('[data-testid="post-item"]').should("have.length.at.least", 1);
 
-    // Ensure that the results contain "sunt" in the title
+    // Ensure that the results contain "sunt aut facere repellat provident occaecati excepturi optio reprehenderit" in the title
     cy.get('[data-testid="post-item"]').each(($el) => {
-      cy.wrap($el).should("contain.text", "sunt");
+      cy.wrap($el).should(
+        "contain.text",
+        "sunt aut facere repellat provident occaecati excepturi optio reprehenderit"
+      );
     });
   });
 
