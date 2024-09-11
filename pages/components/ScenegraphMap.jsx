@@ -140,7 +140,6 @@ const ScenegraphMap = ({ sizeScale = 25, mapStyle = MAP_STYLE }) => {
       initialViewState={INITIAL_VIEW_STATE}
       controller={true}
       getTooltip={getTooltip}
-      data-testid="cy-observation"
     >
       <Map reuseMaps mapboxAccessToken={MAPBOX_TOKEN} mapStyle={mapStyle} />
 

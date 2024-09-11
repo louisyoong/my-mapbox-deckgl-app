@@ -14,7 +14,6 @@ export default function LoginPage() {
   const correctPassword = "123456";
 
   // Handle form submission
-  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -37,10 +36,12 @@ export default function LoginPage() {
         <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
 
         {errorMessage && (
-          <div className="text-red-600 mb-4">{errorMessage}</div>
+          <div className="text-red-600 mb-4" data-testid="error-message">
+            {errorMessage}
+          </div>
         )}
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} data-testid="login-form">
           <div className="mb-4">
             <label
               htmlFor="username"
@@ -55,6 +56,7 @@ export default function LoginPage() {
               onChange={(e) => setUsername(e.target.value)}
               className="mt-1 p-1 block w-full border-gray-300 rounded-md shadow-sm text-slate-700"
               required
+              data-testid="username-input"
             />
           </div>
 
@@ -72,12 +74,14 @@ export default function LoginPage() {
               onChange={(e) => setPassword(e.target.value)}
               className="mt-1 p-1 block w-full border-gray-300 rounded-md shadow-sm text-slate-700"
               required
+              data-testid="password-input"
             />
           </div>
 
           <button
             type="submit"
             className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+            data-testid="submit-button"
           >
             Login
           </button>
