@@ -9,6 +9,7 @@ describe("Login Page Tests", () => {
     cy.visit("http://localhost:3000/login");
   });
 
+  /////// Test case scenario 1
   it("should display an error message for incorrect credentials", () => {
     // Fill in the incorrect username and password
     cy.get('input[id="username"]').type(incorrectUsername);
@@ -26,6 +27,7 @@ describe("Login Page Tests", () => {
     cy.url().should("eq", `${Cypress.config().baseUrl}/login`);
   });
 
+  /////// Test case scenario 2
   it("should require both username and password", () => {
     // Submit the form without entering any credentials
     cy.get('button[type="submit"]').click();
@@ -35,6 +37,7 @@ describe("Login Page Tests", () => {
     cy.get('input[id="password"]:invalid').should("exist");
   });
 
+  /////// Test case scenario 3
   it("should successfully log in with correct credentials", () => {
     // Fill in the correct username and password
     cy.get('input[id="username"]').type(correctUsername);
