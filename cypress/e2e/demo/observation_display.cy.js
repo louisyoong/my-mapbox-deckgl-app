@@ -67,10 +67,10 @@ describe("ScenegraphMap Observations Test for Correct Data", () => {
   });
 });
 
+// Incorrect data that should be detected as wrong
 describe("ScenegraphMap Observations Test for Incorrect Data", () => {
-  // Incorrect data that should be detected as wrong
   const incorrectObservationData = [
-    { id: 1, species: "fish", longitude: -74.57, latitude: 17.1 }, // Wrong species (fish instead of turtle)
+    { id: 1, species: "fish", longitude: -74.57, latitude: 17.1 }, // Wrong species data (fish instead of turtle)
     { id: 2, species: "turtle", longitude: -90.6, latitude: 25.11 },
     { id: 3, species: "turtle", longitude: -96.58, latitude: 24.09 },
     { id: 4, species: "dolphin", longitude: -92.59, latitude: 29.12 },

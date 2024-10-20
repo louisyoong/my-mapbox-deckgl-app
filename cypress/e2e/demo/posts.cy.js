@@ -1,6 +1,5 @@
 describe("Posts Page Tests with JSONPlaceholder API", () => {
   beforeEach(() => {
-    // Visit the Posts page before each test
     cy.visit("/posts");
   });
 
